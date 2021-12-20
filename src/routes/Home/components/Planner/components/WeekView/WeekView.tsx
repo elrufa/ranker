@@ -29,7 +29,7 @@ export default class WeekView extends Component<IWeekViewProps, IWeekViewState> 
     const firstWeek: Week = {
       bracket: brackets[0],
       startRp: props.startingRank.newRp,
-      endRp: (props.startingRank.newRp * 0.8) + brackets[0].rp
+      endRp: (props.startingRank.newRp * 0.6) + brackets[0].rp
     };
 
     if (!state.weeks.length) return { weeks: [firstWeek] };
@@ -38,7 +38,7 @@ export default class WeekView extends Component<IWeekViewProps, IWeekViewState> 
       const snapshot = state.weeks.slice();
 
       snapshot[0].startRp = props.startingRank.newRp;
-      snapshot[0].endRp = (props.startingRank.newRp * 0.8) + snapshot[0].bracket.rp;
+      snapshot[0].endRp = (props.startingRank.newRp * 0.6) + snapshot[0].bracket.rp;
 
       return {
         weeks: snapshot
@@ -82,7 +82,7 @@ export default class WeekView extends Component<IWeekViewProps, IWeekViewState> 
     const week: Week = {
       bracket: brackets[0],
       startRp: previousWeek.endRp,
-      endRp: (previousWeek.endRp * 0.8) + brackets[0].rp
+      endRp: (previousWeek.endRp * 0.6) + brackets[0].rp
     }
     const updatedWeeks: Week[] = [...weeks, week]
 
@@ -100,7 +100,7 @@ export default class WeekView extends Component<IWeekViewProps, IWeekViewState> 
         const updatedWeek = {
           bracket,
           startRp: this.props.startingRank.newRp,
-          endRp: (this.props.startingRank.newRp * 0.8) + bracket.rp
+          endRp: (this.props.startingRank.newRp * 0.6) + bracket.rp
         }
 
         weekSnapshot[0] = updatedWeek;
@@ -111,7 +111,7 @@ export default class WeekView extends Component<IWeekViewProps, IWeekViewState> 
       const updatedWeek: Week = {
         bracket,
         startRp: previousWeek.endRp,
-        endRp: (previousWeek.endRp * 0.8) + bracket.rp
+        endRp: (previousWeek.endRp * 0.6) + bracket.rp
       }
       const weekSnapshot: Week[] = weeks.slice();
 
